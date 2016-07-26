@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Description...">
+  <meta name="author" content="bramtayl">
+  
+  <title>ChainMap.jl</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  <link href="./assets/Documenter.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script src="./assets/mathjaxhelper.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> ChainMap.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Home</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#chainmapjl-documentation">ChainMap.jl Documentation</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">ChainMap.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/bramtayl/ChainMap.jl" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='ChainMap.jl-Documentation-1'></a></p>
+<h1 id="chainmapjl-documentation">ChainMap.jl Documentation</h1>
+<ul>
+<li><a href=".#ChainMap.Arguments"><code>ChainMap.Arguments</code></a></li>
+<li><a href=".#Base.run"><code>Base.run</code></a></li>
+<li><a href=".#ChainMap.bitnot"><code>ChainMap.bitnot</code></a></li>
+<li><a href=".#ChainMap.push"><code>ChainMap.push</code></a></li>
+<li><a href=".#ChainMap.unshift"><code>ChainMap.unshift</code></a></li>
+<li><a href=".#ChainMap.@chain"><code>ChainMap.@chain</code></a></li>
+<li><a href=".#ChainMap.@lambda"><code>ChainMap.@lambda</code></a></li>
+<li><a href=".#ChainMap.@multiblock"><code>ChainMap.@multiblock</code></a></li>
+<li><a href=".#ChainMap.@nonstandard"><code>ChainMap.@nonstandard</code></a></li>
+<li><a href=".#ChainMap.@over"><code>ChainMap.@over</code></a></li>
+<li><a href=".#ChainMap.@safe"><code>ChainMap.@safe</code></a></li>
+</ul>
+<p><a id='ChainMap.Arguments' href='#ChainMap.Arguments'>#</a>
+<strong><code>ChainMap.Arguments</code></strong> &mdash; <em>Type</em>.</p>
+<pre><code>Arguments
+</code></pre>
+
+<p>A type that can be used to store arguments. Will store positional and keyword arguments for later use.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="julia">a = Arguments(1, 2, a = 3, b = 4)
+Test.@test a.positional ==
+           (1, 2)
+Test.@test a.keyword ==
+           Dict{Symbol, Any}(:a =&gt; 3, :b =&gt; 4)
+</code></pre>
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L118-132' class='documenter-source'>source</a><br></p>
+<p><a id='Base.run' href='#Base.run'>#</a>
+<strong><code>Base.run</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code> run(a::Arguments, f)
+</code></pre>
+
+<p>Call <code>f</code> on the arguments in <code>a</code></p>
+<p><strong>Examples</strong></p>
+<pre><code class="julia">testfunction(a, b; c = 4) = a - b + c
+
+Test.@test (@chain Arguments(1, 2, c = 3) run(testfunction) ) ==
+           testfunction(1, 2, c = 3)
+</code></pre>
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L163-175' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.bitnot' href='#ChainMap.bitnot'>#</a>
+<strong><code>ChainMap.bitnot</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>bitnot
+</code></pre>
+
+<p>Alias for <code>~</code> for use within <code>@over</code></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L112-116' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.push' href='#ChainMap.push'>#</a>
+<strong><code>ChainMap.push</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>push(arguments::Arguments, positional...; keyword...)
+</code></pre>
+
+<p>Add positional and keyword arguments to an already existing arguments type. Positional arguments are added at the end. Note that push can also be used in any other context that push! is defined; it will copy the first argument before executing.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="julia">Test.@test (@chain Arguments(1, a = 3) push(2, b = 4) ) ==
+           Arguments(1, 2, a = 3, b = 4)
+</code></pre>
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L134-147' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.unshift' href='#ChainMap.unshift'>#</a>
+<strong><code>ChainMap.unshift</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>unshift(arguments::Arguments, positional...)
+</code></pre>
+
+<p>Add positional arguments to an already existing arguments type. Arguments are added at the start. Note that unshift can also be used in any other context that unshift! is defined; it will copy the first argument before executing.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="julia">Test.@test (@chain Arguments(1, a = 3) unshift(2) ) ==
+           Arguments(2, 1, a = 3)
+</code></pre>
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L149-161' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.@chain' href='#ChainMap.@chain'>#</a>
+<strong><code>ChainMap.@chain</code></strong> &mdash; <em>Macro</em>.</p>
+<pre><code>@chain single
+</code></pre>
+
+<p>Separate single blocks out into lines and recur, return single non-blocks.</p>
+<pre><code>@chain head tail
+</code></pre>
+
+<p><code>@chain</code> always substitutes <code>head</code> into <code>_</code> in <code>tail</code>.</p>
+<p>In addition, insertion of <code>head</code> to the first argument of <code>tail</code> is default. Insertion is overridden in two ways: if bare <code>_</code> or <code>_...</code> is an argument to <code>tail</code>, or if <code>tail</code> is a block.</p>
+<pre><code>@chain head tails...
+</code></pre>
+
+<p>Reduce <code>@chain</code> over <code>(head, tails...)</code>.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="julia">plus(a, b) = a + b
+minus(a, b) = a - b
+
+Test.@test (@chain begin
+                     1
+                     plus(1)
+                   end) ==
+           @chain 1 plus(1)
+
+Test.@test (@chain 1 minus(2, _) ) ==
+           minus(2, 1)
+
+Test.@test (@chain 1 plus(2) ) ==
+           plus(1, 2)
+
+Test.@test (@chain begin
+                     1
+                     begin
+                       b = 2
+                       minus(b, _)
+                     end
+                   end) ==
+           begin
+             b = 2
+             minus(b, 1)
+           end
+
+Test.@test (@chain 1 minus(2) plus(3) ) ==
+           plus(minus(1, 2), 3)
+</code></pre>
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L11-60' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.@lambda' href='#ChainMap.@lambda'>#</a>
+<strong><code>ChainMap.@lambda</code></strong> &mdash; <em>Macro</em>.</p>
+<pre><code>@lambda(e)
+</code></pre>
+
+<p>An anonymous function is constructed, with <code>_</code> as an input varible.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="julia">testlambda = @lambda -(2, _)
+Test.@test  testlambda(1) == -(2, 1)
+</code></pre>
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L62-72' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.@multiblock' href='#ChainMap.@multiblock'>#</a>
+<strong><code>ChainMap.@multiblock</code></strong> &mdash; <em>Macro</em>.</p>
+<pre><code>@multiblock(fs...)
+</code></pre>
+
+<p>If <code>f1</code> is a function taking one argument ending in "1" which will generate code, <code>f</code> will be defined. In <code>f</code>, <code>f1</code> will be mapped over all arguments and the results will be returned in one code block. This will happen for all <code>f1</code> functions in <code>fs...</code>.</p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L186-193' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.@nonstandard' href='#ChainMap.@nonstandard'>#</a>
+<strong><code>ChainMap.@nonstandard</code></strong> &mdash; <em>Macro</em>.</p>
+<pre><code>@nonstandard(fs...)
+</code></pre>
+
+<p>Will create a nonstandard evaluation macro for each of the fs functions. Each function should be a function that takes and returns expressions. The nonstandard macro will have the same name but will take in code, not expressions, and will evaluate the result locally when the macro is called.</p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L177-184' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.@over' href='#ChainMap.@over'>#</a>
+<strong><code>ChainMap.@over</code></strong> &mdash; <em>Macro</em>.</p>
+<pre><code>@over e
+</code></pre>
+
+<p>Interprets e as a function to broadcast with, and expressions wrapped with tildas as objects to broadcast over.</p>
+<p>You can also map over splatted arguments, but only one. Make multi-line functions by wrapping in blocks. To use <code>~</code> as a function, use the alias <code>bitnot</code>.</p>
+<p><strong>Examples</strong></p>
+<pre><code class="julia">Test.@test (@over +( ~[1, 2], ~[3, 4] ) ) ==
+           [1 + 3, 2 + 4]
+
+a = [1, 2]
+b = [3, 4]
+c = ( [5, 6], [7, 8] )
+d = 9
+
+Test.@test (@over ~a + ~a + ~b) ==
+           [1 + 1 + 3, 2 + 2 + 4]
+
+Test.@test (@over +(~a, ~d) ) ==
+           [1 + 9, 2 + 9]
+
+Test.@test (@over ~a + ~(c...) ) ==
+           [ [1 + 5 + 7], [2 + 6 + 8] ]
+
+Test.@test (@over begin
+                    e = ~a
+                    e + 1
+                  end ) ==
+            [2, 3]
+</code></pre>
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L74-110' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.@safe' href='#ChainMap.@safe'>#</a>
+<strong><code>ChainMap.@safe</code></strong> &mdash; <em>Macro</em>.</p>
+<pre><code>@safe(fs...)
+</code></pre>
+
+<p>Defines a new version of mutate-in-place functions like <code>push!</code> that copies the first positional argument before processing.</p>
+<p>The new function will have a name without !, like <code>push</code>. Can be used on multiple functions.</p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/1e054d2021d6122a0aa43b6158c7b0337e95501e/src/doc.jl#L1-9' class='documenter-source'>source</a><br></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/bramtayl/ChainMap.jl" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-07-26 21:53:40.512856
+-->
