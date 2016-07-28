@@ -300,7 +300,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L123-137' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L130-144' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run' href='#Base.run'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span> run(a::Arguments, f)
@@ -316,7 +316,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L168-180' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L175-187' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.bitnot' href='#ChainMap.bitnot'>#</a>
 <strong><code>ChainMap.bitnot</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span>bitnot
@@ -329,7 +329,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L112-121' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L119-128' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.push' href='#ChainMap.push'>#</a>
 <strong><code>ChainMap.push</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span><span class="nt">push</span><span class="o">(</span><span class="nt">arguments</span><span class="o">:</span><span class="nd">:Arguments</span><span class="o">,</span> <span class="nt">positional</span><span class="o">...;</span> <span class="nt">keyword</span><span class="o">...)</span>
@@ -343,7 +343,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L139-152' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L146-159' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.remove_suffix' href='#ChainMap.remove_suffix'>#</a>
 <strong><code>ChainMap.remove_suffix</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span>ChainMap.remove_suffix(suffixed::AbstractString, suffix::AbstractString)
@@ -357,7 +357,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L205-215' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L212-222' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.unshift' href='#ChainMap.unshift'>#</a>
 <strong><code>ChainMap.unshift</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span>unshift(arguments::Arguments, positional...)
@@ -371,7 +371,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L154-166' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L161-173' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@chain' href='#ChainMap.@chain'>#</a>
 <strong><code>ChainMap.@chain</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@chain single
@@ -384,7 +384,7 @@
 
 
 <p><code>@chain</code> always substitutes <code>head</code> into <code>_</code> in <code>tail</code>.</p>
-<p>In addition, insertion of <code>head</code> to the first argument of <code>tail</code> is default. Insertion is overridden in two ways: if bare <code>_</code> or <code>_...</code> is an argument to <code>tail</code>, or if <code>tail</code> is a block.</p>
+<p>In addition, insertion of <code>head</code> to the first argument of <code>tail</code> is default. if tail has no arguments, it will be called on head only. Insertion is overridden in two ways: if bare <code>_</code> or <code>_...</code> is an argument to <code>tail</code>, or if <code>tail</code> is a block.</p>
 <div class="codehilite"><pre><span></span>@chain head tails...
 </pre></div>
 
@@ -393,12 +393,15 @@
 <p><strong>Examples</strong></p>
 <div class="codehilite"><pre><span></span><span class="n">plus</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
 <span class="n">minus</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="n">plusone</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">1</span>
 
 <span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chain</span> <span class="k">begin</span>
                      <span class="mi">1</span>
                      <span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
                    <span class="k">end</span><span class="p">)</span> <span class="o">==</span>
            <span class="p">@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">plus</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">plusone</span><span class="p">)</span> <span class="o">==</span> <span class="n">plusone</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
            <span class="n">minus</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
@@ -423,7 +426,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L11-60' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L11-64' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@lambda' href='#ChainMap.@lambda'>#</a>
 <strong><code>ChainMap.@lambda</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@lambda(e)
@@ -437,7 +440,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L62-72' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L66-76' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@multiblock' href='#ChainMap.@multiblock'>#</a>
 <strong><code>ChainMap.@multiblock</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@multiblock(fs...)
@@ -458,7 +461,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L217-237' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L224-244' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@nonstandard' href='#ChainMap.@nonstandard'>#</a>
 <strong><code>ChainMap.@nonstandard</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@nonstandard(fs...)
@@ -480,7 +483,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L182-203' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L189-210' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@over' href='#ChainMap.@over'>#</a>
 <strong><code>ChainMap.@over</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@over e
@@ -490,7 +493,10 @@
 <p>Interprets e as a function to broadcast with, and expressions wrapped with tildas as objects to broadcast over.</p>
 <p>You can also map over splatted arguments, but only one. Make multi-line functions by wrapping in blocks. To use <code>~</code> as a function, use the alias <code>bitnot</code>.</p>
 <p><strong>Examples</strong></p>
-<div class="codehilite"><pre><span></span><span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">over</span> <span class="o">+</span><span class="p">(</span> <span class="o">~</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="o">~</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
+<div class="codehilite"><pre><span></span><span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">over</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">over</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
+
+<span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">over</span> <span class="o">+</span><span class="p">(</span> <span class="o">~</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="o">~</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span> <span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
            <span class="p">[</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">4</span><span class="p">]</span>
 
 <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -515,7 +521,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L74-110' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L78-117' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@safe' href='#ChainMap.@safe'>#</a>
 <strong><code>ChainMap.@safe</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@safe(fs...)
@@ -524,7 +530,7 @@
 
 <p>Defines a new version of mutate-in-place functions like <code>push!</code> that copies the first positional argument before processing.</p>
 <p>The new function will have a name without !, like <code>push</code>. Can be used on multiple functions.</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/89aebcd380a646737ad702243e6a48f8cec37fe3/src/doc.jl#L1-9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/5761b0767009dc721e59500a7af5b73e2f1e841b/src/doc.jl#L1-9' class='documenter-source'>source</a><br></p>
           <aside class="copyright" role="note">
             
             Documentation built with
