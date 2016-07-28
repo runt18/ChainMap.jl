@@ -176,22 +176,6 @@
         
       
       
-        <ul>
-          
-            <li class="anchor">
-              <a title="Read me" href="#read-me">
-                Read me
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Index of exports" href="#index-of-exports">
-                Index of exports
-              </a>
-            </li>
-          
-        </ul>
-      
     
   </li>
 
@@ -208,57 +192,6 @@
           
           <p><a id='ChainMap.jl-1'></a></p>
 <h1 id="chainmapjl">ChainMap.jl</h1>
-<p>This package attempts to integrate mapping and chaining. The chaining code owes heavily to one-more-minute/Lazy.jl.</p>
-<p><a id='Read-me-1'></a></p>
-<h2 id="read-me">Read me</h2>
-<p><a id='Chaining-1'></a></p>
-<h3 id="chaining">Chaining</h3>
-<p>Here is a short example to illustrate the chaining mechanism.</p>
-<div class="codehilite"><pre><span></span><span class="n">readme</span> <span class="o">=</span> <span class="p">@</span><span class="n">lambda</span> <span class="p">@</span><span class="n">over</span> <span class="p">@</span><span class="n">chain</span> <span class="k">begin</span>
-  <span class="o">~</span><span class="n">_</span>
-  <span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-  <span class="o">^</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span>
-  <span class="k">begin</span>
-    <span class="n">a</span> <span class="o">=</span> <span class="n">_</span> <span class="o">-</span> <span class="mi">1</span>
-    <span class="n">b</span> <span class="o">=</span> <span class="n">_</span> <span class="o">+</span> <span class="mi">1</span>
-    <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
-  <span class="k">end</span>
-  <span class="n">sum</span>
-<span class="k">end</span>
-
-<span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="n">readme</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-
-
-<p>Three macros, <code>@chain</code>, <code>@lambda</code>, and <code>@over</code>, are included in this mechanism. See docstrings for more information.</p>
-<p><a id='Argument-building-1'></a></p>
-<h3 id="argument-building">Argument building</h3>
-<p>There is another mechanism of argument storage. This is conceptually the inverse of chaining. Here is an example:</p>
-<div class="codehilite"><pre><span></span><span class="k">function</span><span class="nf"> test_function</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">;</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">4</span><span class="p">)</span>
-  <span class="n">a</span> <span class="o">-</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span> <span class="o">-</span> <span class="n">d</span>
-<span class="k">end</span>
-
-<span class="n">test_arguments</span> <span class="o">=</span> <span class="p">@</span><span class="n">chain</span> <span class="k">begin</span>
-  <span class="mi">1</span>
-  <span class="n">Arguments</span>
-  <span class="n">push</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-  <span class="n">unshift</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-  <span class="n">run</span><span class="p">(</span><span class="n">test_function</span><span class="p">)</span>
-<span class="k">end</span>
-
-<span class="n">Test</span><span class="o">.</span><span class="p">@</span><span class="n">test</span> <span class="n">test_arguments</span> <span class="o">==</span> <span class="n">test_function</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">;</span> <span class="n">d</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-
-<p>There are four functions in this mechanism: <code>Arguments</code>, <code>push</code>, <code>unshift</code>, and <code>run</code>. See docstrings for more information.</p>
-<p><a id='Macro-generation-1'></a></p>
-<h3 id="macro-generation">Macro generation</h3>
-<p>There are several macros that create new functions/macros based on existing functions included: <code>@nonstandard</code>, <code>@safe</code>, and <code>@multiblock</code>. See docstrings for more information. Note that these functions were used to generate the package itself. Standard evaluation versions exist for all exported macros.</p>
-<p><a id='Aliasing-1'></a></p>
-<h3 id="aliasing">Aliasing</h3>
-<p>If you want shorter versions of the chaining functions for convenience, run the <code>@make_aliases</code> macro. This will create, for example, the <code>@c</code> macro as identical to <code>@chain</code>.</p>
-<p><a id='Index-of-exports-1'></a></p>
-<h2 id="index-of-exports">Index of exports</h2>
 <ul>
 <li><a href=".#ChainMap.Arguments"><code>ChainMap.Arguments</code></a></li>
 <li><a href=".#Base.run"><code>Base.run</code></a></li>
@@ -289,7 +222,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L142-156' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L142-156' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run' href='#Base.run'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span> run(a::Arguments, f)
@@ -305,7 +238,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L187-199' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L187-199' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.bitnot' href='#ChainMap.bitnot'>#</a>
 <strong><code>ChainMap.bitnot</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span>bitnot
@@ -318,7 +251,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L131-140' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L131-140' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.push' href='#ChainMap.push'>#</a>
 <strong><code>ChainMap.push</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span><span class="nt">push</span><span class="o">(</span><span class="nt">arguments</span><span class="o">:</span><span class="nd">:Arguments</span><span class="o">,</span> <span class="nt">positional</span><span class="o">...;</span> <span class="nt">keyword</span><span class="o">...)</span>
@@ -332,7 +265,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L158-171' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L158-171' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.unshift' href='#ChainMap.unshift'>#</a>
 <strong><code>ChainMap.unshift</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span>unshift(arguments::Arguments, positional...)
@@ -346,7 +279,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L173-185' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L173-185' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@chain' href='#ChainMap.@chain'>#</a>
 <strong><code>ChainMap.@chain</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@chain single
@@ -401,7 +334,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L23-76' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L23-76' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@lambda' href='#ChainMap.@lambda'>#</a>
 <strong><code>ChainMap.@lambda</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@lambda(e)
@@ -415,7 +348,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L78-88' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L78-88' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@make_aliases' href='#ChainMap.@make_aliases'>#</a>
 <strong><code>ChainMap.@make_aliases</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@make_aliases
@@ -430,7 +363,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L249-261' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L249-261' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@multiblock' href='#ChainMap.@multiblock'>#</a>
 <strong><code>ChainMap.@multiblock</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@multiblock(fs...)
@@ -454,7 +387,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L224-247' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L224-247' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@nonstandard' href='#ChainMap.@nonstandard'>#</a>
 <strong><code>ChainMap.@nonstandard</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@nonstandard(fs...)
@@ -476,7 +409,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L201-222' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L201-222' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@over' href='#ChainMap.@over'>#</a>
 <strong><code>ChainMap.@over</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@over e
@@ -514,7 +447,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L90-129' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L90-129' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@safe' href='#ChainMap.@safe'>#</a>
 <strong><code>ChainMap.@safe</code></strong> &mdash; <em>Macro</em>.</p>
 <div class="codehilite"><pre><span></span>@safe(fs...)
@@ -535,7 +468,7 @@
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/ddb5a08942bfc4716e9a137e262bf3dab3dad9ef/src/doc.jl#L1-21' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/bc6007fdc08711ae4cd27feebbe75fcb4f55c1d0/src/doc.jl#L1-21' class='documenter-source'>source</a><br></p>
           <aside class="copyright" role="note">
             
             Documentation built with
