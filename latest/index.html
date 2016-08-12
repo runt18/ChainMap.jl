@@ -196,23 +196,25 @@
 <li><a href=".#ChainMap.Arguments"><code>ChainMap.Arguments</code></a></li>
 <li><a href=".#ChainMap.Arguments-Tuple{Tuple,Array{T,1}}"><code>ChainMap.Arguments</code></a></li>
 <li><a href=".#ChainMap.LazyCall"><code>ChainMap.LazyCall</code></a></li>
-<li><a href=".#Base.run-Tuple{ChainMap.LazyCall,Function}"><code>Base.run</code></a></li>
 <li><a href=".#Base.run-Tuple{ChainMap.Arguments,Function}"><code>Base.run</code></a></li>
-<li><a href=".#Base.run-Tuple{ChainMap.Arguments}"><code>Base.run</code></a></li>
+<li><a href=".#Base.run-Tuple{ChainMap.LazyCall,Function}"><code>Base.run</code></a></li>
 <li><a href=".#Base.run-Tuple{ChainMap.LazyCall}"><code>Base.run</code></a></li>
+<li><a href=".#Base.run-Tuple{ChainMap.Arguments}"><code>Base.run</code></a></li>
 <li><a href=".#ChainMap.bitnot"><code>ChainMap.bitnot</code></a></li>
 <li><a href=".#ChainMap.chain-Tuple"><code>ChainMap.chain</code></a></li>
-<li><a href=".#ChainMap.chain-Tuple{Any,Any}"><code>ChainMap.chain</code></a></li>
 <li><a href=".#ChainMap.chain-Tuple{Any,Expr}"><code>ChainMap.chain</code></a></li>
 <li><a href=".#ChainMap.chain-Tuple{Expr}"><code>ChainMap.chain</code></a></li>
+<li><a href=".#ChainMap.chain-Tuple{Any,Any}"><code>ChainMap.chain</code></a></li>
 <li><a href=".#ChainMap.collect_arguments-Tuple"><code>ChainMap.collect_arguments</code></a></li>
 <li><a href=".#ChainMap.collect_call-Tuple{Any,Vararg{Any,N}}"><code>ChainMap.collect_call</code></a></li>
 <li><a href=".#ChainMap.lazy_call-Tuple{Any}"><code>ChainMap.lazy_call</code></a></li>
+<li><a href=".#ChainMap.nonstandard-Tuple"><code>ChainMap.nonstandard</code></a></li>
 <li><a href=".#ChainMap.push-Tuple{ChainMap.Arguments,Vararg{Any,N}}"><code>ChainMap.push</code></a></li>
 <li><a href=".#ChainMap.unshift-Tuple{ChainMap.Arguments,Vararg{Any,N}}"><code>ChainMap.unshift</code></a></li>
 <li><a href=".#ChainMap.unweave-Tuple{Expr}"><code>ChainMap.unweave</code></a></li>
 <li><a href=".#ChainMap.@chain"><code>ChainMap.@chain</code></a></li>
 <li><a href=".#ChainMap.@lazy_call"><code>ChainMap.@lazy_call</code></a></li>
+<li><a href=".#ChainMap.@nonstandard"><code>ChainMap.@nonstandard</code></a></li>
 <li><a href=".#ChainMap.@unweave"><code>ChainMap.@unweave</code></a></li>
 </ul>
 <p><a id='ChainMap.Arguments' href='#ChainMap.Arguments'>#</a>
@@ -225,7 +227,7 @@ end
 
 
 <p>Will store positional and keyword arguments for later use.</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L2-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L2-L9' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.Arguments-Tuple{Tuple,Array{T,1}}' href='#ChainMap.Arguments-Tuple{Tuple,Array{T,1}}'>#</a>
 <strong><code>ChainMap.Arguments</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>Arguments(positional::Tuple, keyword::Vector)
@@ -233,7 +235,7 @@ end
 
 
 <p>Convert <code>keyword</code> to a <code>Dict</code> before creating Arguments type.</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.LazyCall' href='#ChainMap.LazyCall'>#</a>
 <strong><code>ChainMap.LazyCall</code></strong> &mdash; <em>Type</em>.</p>
 <div class="codehilite"><pre><span></span>type LazyCall{T &lt;: Function}
@@ -244,7 +246,7 @@ end
 
 
 <p>Will store positional and keyword arguments for later use.</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L72-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L72-L79' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.Arguments,Function}' href='#Base.run-Tuple{ChainMap.Arguments,Function}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(a::Arguments, f::Function)
@@ -263,7 +265,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L166-L181' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L166-L181' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.Arguments}' href='#Base.run-Tuple{ChainMap.Arguments}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(a::Arguments)
@@ -281,7 +283,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L130-L144' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L130-L144' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.LazyCall,Function}' href='#Base.run-Tuple{ChainMap.LazyCall,Function}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(l::LazyCall, f::Function)
@@ -301,7 +303,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L184-L201' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L184-L201' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.LazyCall}' href='#Base.run-Tuple{ChainMap.LazyCall}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(l::LazyCall)
@@ -321,7 +323,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L147-L163' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L147-L163' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.bitnot' href='#ChainMap.bitnot'>#</a>
 <strong><code>ChainMap.bitnot</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span>bitnot
@@ -334,7 +336,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/unweave.jl#L80-L89' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/unweave.jl#L80-L89' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.collect_arguments-Tuple' href='#ChainMap.collect_arguments-Tuple'>#</a>
 <strong><code>ChainMap.collect_arguments</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>collect_arguments(positional...; keyword...)
@@ -349,7 +351,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L86-L97' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L86-L97' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.collect_call-Tuple{Any,Vararg{Any,N}}' href='#ChainMap.collect_call-Tuple{Any,Vararg{Any,N}}'>#</a>
 <strong><code>ChainMap.collect_call</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span><span class="nt">collect_call</span><span class="o">(</span><span class="nt">f</span><span class="o">:</span><span class="nd">:Function</span><span class="o">,</span> <span class="nt">positional</span><span class="o">...;</span> <span class="nt">keyword</span><span class="o">...)</span>
@@ -368,7 +370,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L102-L117' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L102-L117' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.push-Tuple{ChainMap.Arguments,Vararg{Any,N}}' href='#ChainMap.push-Tuple{ChainMap.Arguments,Vararg{Any,N}}'>#</a>
 <strong><code>ChainMap.push</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span><span class="nt">push</span><span class="o">(</span><span class="nt">arguments</span><span class="o">:</span><span class="nd">:Arguments</span><span class="o">,</span> <span class="nt">positional</span><span class="o">...;</span> <span class="nt">keyword</span><span class="o">...)</span>
@@ -387,7 +389,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L29-L46' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L29-L46' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.unshift-Tuple{ChainMap.Arguments,Vararg{Any,N}}' href='#ChainMap.unshift-Tuple{ChainMap.Arguments,Vararg{Any,N}}'>#</a>
 <strong><code>ChainMap.unshift</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>unshift(arguments::Arguments, positional...)
@@ -404,19 +406,124 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L52-L66' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L52-L66' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@chain' href='#ChainMap.@chain'>#</a>
 <strong><code>ChainMap.@chain</code></strong> &mdash; <em>Macro</em>.</p>
-<p>chain (generic function with 4 methods)</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/nonstandard.jl#L5' class='documenter-source'>source</a><br></p>
+<div class="codehilite"><pre><span></span>@chain head tail::Expr
+</pre></div>
+
+
+<p><code>@chain</code> always substitutes <code>head</code> into <code>_</code> in <code>tail</code>.</p>
+<p>If</p>
+<ul>
+<li>tail can be recognized as a function call or a macro call, and</li>
+<li>neither bare <code>_</code> nor <code>_...</code> is a positional argument to <code>tail</code></li>
+</ul>
+<p><code>_</code> will be first be inserted as the first argument to <code>tail</code>.</p>
+<p>To prevent insertion, wrap <code>tail</code> in a <code>begin</code> block.</p>
+<p><strong>Examples</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="n">test</span> <span class="p">(</span> <span class="p">@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
+      <span class="n">vcat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="p">@</span><span class="n">test</span> <span class="p">(</span> <span class="p">@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
+      <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="p">@</span><span class="n">test</span> <span class="p">(</span> <span class="p">@</span><span class="n">chain</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">_</span><span class="o">...</span><span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
+      <span class="n">vcat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="p">@</span><span class="n">test</span> <span class="p">(</span> <span class="p">@</span><span class="n">chain</span> <span class="mi">1</span> <span class="k">begin</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="k">end</span> <span class="p">)</span> <span class="o">==</span>
+      <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>@chain head tail
+</pre></div>
+
+
+<p>Call <code>tail</code> on <code>head</code></p>
+<p><strong>Examples</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">vcat</span><span class="p">)</span> <span class="o">==</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>@chain e::Expr
+</pre></div>
+
+
+<p>Separate single begin blocks out into lines and recur. Return single non-blocks as is.</p>
+<p><strong>Examples</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chain</span> <span class="k">begin</span>
+                  <span class="mi">1</span>
+                  <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+               <span class="k">end</span><span class="p">)</span> <span class="o">==</span>
+      <span class="p">@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chain</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>@chain es...
+</pre></div>
+
+
+<p>Reduce <code>@chain</code> over <code>es</code></p>
+<p><strong>Examples</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="n">test</span> <span class="p">(</span> <span class="p">@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
+      <span class="p">(</span> <span class="p">@</span><span class="n">chain</span> <span class="p">(</span> <span class="p">@</span><span class="n">chain</span> <span class="mi">1</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/nonstandard.jl#L34' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@lazy_call' href='#ChainMap.@lazy_call'>#</a>
 <strong><code>ChainMap.@lazy_call</code></strong> &mdash; <em>Macro</em>.</p>
-<p>lazy_call (generic function with 1 method)</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/nonstandard.jl#L17' class='documenter-source'>source</a><br></p>
+<div class="codehilite"><pre><span></span>@lazy_call(e)
+</pre></div>
+
+
+<p>Mostly cosmetic; will break apart a function call into a <code>LazyCall</code> object. Cannot handle keyword arguments at the moment.</p>
+<p><strong>Examples</strong></p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="n">test</span> <span class="p">(</span> <span class="p">@</span><span class="n">lazy_call</span> <span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="p">)</span> <span class="o">==</span>
+      <span class="n">collect_call</span><span class="p">(</span><span class="o">+</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="p">@</span><span class="n">test</span> <span class="p">(</span> <span class="p">@</span><span class="n">lazy_call</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
+</pre></div>
+
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/nonstandard.jl#L34' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.@nonstandard' href='#ChainMap.@nonstandard'>#</a>
+<strong><code>ChainMap.@nonstandard</code></strong> &mdash; <em>Macro</em>.</p>
+<p>@nonstandard(fs...) Will create a nonstandard evaluation macro for each of the fs functions.</p>
+<p>Each function should be a function that takes and returns expressions. The nonstandard macro will have the same name but will take in code, not expressions, and will evaluate the result locally when the macro is called. Will copy over the docstrings from the standard version to the nonstandard version. #Examples</p>
+<div class="codehilite"><pre><span></span><span class="n">binaryfun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="p">:(</span><span class="o">$</span><span class="n">b</span><span class="p">(</span><span class="o">$</span><span class="n">a</span><span class="p">,</span> <span class="o">$</span><span class="n">c</span><span class="p">))</span>
+<span class="n">chainback</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="p">:(</span><span class="o">$</span><span class="n">c</span><span class="p">(</span><span class="o">$</span><span class="n">b</span><span class="p">,</span> <span class="o">$</span><span class="n">a</span><span class="p">))</span>
+<span class="p">@</span><span class="n">nonstandard</span> <span class="n">binaryfun</span> <span class="n">chainback</span>
+<span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">binaryfun</span> <span class="mi">1</span> <span class="n">vcat</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chainback</span> <span class="mi">2</span> <span class="mi">3</span> <span class="n">vcat</span><span class="p">)</span> <span class="o">==</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/nonstandard.jl#L31' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@unweave' href='#ChainMap.@unweave'>#</a>
 <strong><code>ChainMap.@unweave</code></strong> &mdash; <em>Macro</em>.</p>
-<p>unweave (generic function with 1 method)</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/nonstandard.jl#L11' class='documenter-source'>source</a><br></p>
+<div class="codehilite"><pre><span></span>@unweave e
+</pre></div>
+
+
+<p>Interprets <code>e</code> as a function with its positional arguments wrapped in tildas and interwoven into it.</p>
+<p>Will return a <code>LazyCall</code> object containing both an anonymous function and its arguments. You can also weave in <em>only one</em> splatted argument. Make multi-line functions by wrapping in a begin block. To use <code>~</code> as a function, use the alias <code>bitnot</code>.</p>
+<p><strong>Examples</strong></p>
+<div class="codehilite"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">(</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span> <span class="p">)</span>
+
+<span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chain</span> <span class="k">begin</span>
+                  <span class="p">@</span><span class="n">unweave</span> <span class="n">vcat</span><span class="p">(</span><span class="o">~</span><span class="n">a</span><span class="p">,</span> <span class="o">~</span><span class="n">a</span><span class="p">,</span> <span class="o">~</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="o">~</span><span class="p">(</span><span class="n">b</span><span class="o">...</span><span class="p">)</span> <span class="p">)</span>
+                  <span class="n">run</span><span class="p">(</span><span class="n">map</span><span class="p">)</span>
+              <span class="k">end</span><span class="p">)</span> <span class="o">==</span>
+      <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span> <span class="p">]</span>
+</pre></div>
+
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/nonstandard.jl#L34' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple' href='#ChainMap.chain-Tuple'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain es...
@@ -430,7 +537,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/chain.jl#L82-L92' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/chain.jl#L82-L92' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple{Any,Any}' href='#ChainMap.chain-Tuple{Any,Any}'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain head tail
@@ -443,7 +550,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/chain.jl#L47-L56' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/chain.jl#L47-L56' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple{Any,Expr}' href='#ChainMap.chain-Tuple{Any,Expr}'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain head tail::Expr
@@ -473,7 +580,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/chain.jl#L16-L44' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/chain.jl#L16-L44' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple{Expr}' href='#ChainMap.chain-Tuple{Expr}'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain e::Expr
@@ -492,7 +599,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/chain.jl#L59-L74' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/chain.jl#L59-L74' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.lazy_call-Tuple{Any}' href='#ChainMap.lazy_call-Tuple{Any}'>#</a>
 <strong><code>ChainMap.lazy_call</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@lazy_call(e)
@@ -508,7 +615,20 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/LazyCall.jl#L205-L218' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/LazyCall.jl#L205-L218' class='documenter-source'>source</a><br></p>
+<p><a id='ChainMap.nonstandard-Tuple' href='#ChainMap.nonstandard-Tuple'>#</a>
+<strong><code>ChainMap.nonstandard</code></strong> &mdash; <em>Method</em>.</p>
+<p>@nonstandard(fs...) Will create a nonstandard evaluation macro for each of the fs functions.</p>
+<p>Each function should be a function that takes and returns expressions. The nonstandard macro will have the same name but will take in code, not expressions, and will evaluate the result locally when the macro is called. Will copy over the docstrings from the standard version to the nonstandard version. #Examples</p>
+<div class="codehilite"><pre><span></span><span class="n">binaryfun</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="p">:(</span><span class="o">$</span><span class="n">b</span><span class="p">(</span><span class="o">$</span><span class="n">a</span><span class="p">,</span> <span class="o">$</span><span class="n">c</span><span class="p">))</span>
+<span class="n">chainback</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">=</span> <span class="p">:(</span><span class="o">$</span><span class="n">c</span><span class="p">(</span><span class="o">$</span><span class="n">b</span><span class="p">,</span> <span class="o">$</span><span class="n">a</span><span class="p">))</span>
+<span class="p">@</span><span class="n">nonstandard</span> <span class="n">binaryfun</span> <span class="n">chainback</span>
+<span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">binaryfun</span> <span class="mi">1</span> <span class="n">vcat</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="p">@</span><span class="n">test</span> <span class="p">(@</span><span class="n">chainback</span> <span class="mi">2</span> <span class="mi">3</span> <span class="n">vcat</span><span class="p">)</span> <span class="o">==</span> <span class="n">vcat</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/nonstandard.jl#L11-L27' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.unweave-Tuple{Expr}' href='#ChainMap.unweave-Tuple{Expr}'>#</a>
 <strong><code>ChainMap.unweave</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@unweave e
@@ -529,7 +649,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/83b3c93b25b9ed3e4409c8d60e8237cfdc28444f/src/unweave.jl#L36-L59' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/3d7df5033e430db7f5bb8bbee7e758188734ec2e/src/unweave.jl#L36-L59' class='documenter-source'>source</a><br></p>
           <aside class="copyright" role="note">
             
             Documentation built with
