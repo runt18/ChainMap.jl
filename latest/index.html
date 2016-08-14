@@ -197,15 +197,15 @@
 <li><a href=".#ChainMap.Arguments-Tuple{Tuple,Array{T,1}}"><code>ChainMap.Arguments</code></a></li>
 <li><a href=".#ChainMap.LazyCall"><code>ChainMap.LazyCall</code></a></li>
 <li><a href=".#Base.merge-Tuple{ChainMap.Arguments,ChainMap.Arguments}"><code>Base.merge</code></a></li>
-<li><a href=".#Base.run-Tuple{ChainMap.LazyCall,Function}"><code>Base.run</code></a></li>
+<li><a href=".#Base.run-Tuple{ChainMap.Arguments}"><code>Base.run</code></a></li>
 <li><a href=".#Base.run-Tuple{ChainMap.Arguments,Function}"><code>Base.run</code></a></li>
 <li><a href=".#Base.run-Tuple{ChainMap.LazyCall}"><code>Base.run</code></a></li>
-<li><a href=".#Base.run-Tuple{ChainMap.Arguments}"><code>Base.run</code></a></li>
+<li><a href=".#Base.run-Tuple{ChainMap.LazyCall,Function}"><code>Base.run</code></a></li>
 <li><a href=".#ChainMap.arguments_block-Tuple"><code>ChainMap.arguments_block</code></a></li>
 <li><a href=".#ChainMap.bitnot"><code>ChainMap.bitnot</code></a></li>
-<li><a href=".#ChainMap.chain-Tuple"><code>ChainMap.chain</code></a></li>
-<li><a href=".#ChainMap.chain-Tuple{Any,Any}"><code>ChainMap.chain</code></a></li>
 <li><a href=".#ChainMap.chain-Tuple{Any,Expr}"><code>ChainMap.chain</code></a></li>
+<li><a href=".#ChainMap.chain-Tuple{Any,Any}"><code>ChainMap.chain</code></a></li>
+<li><a href=".#ChainMap.chain-Tuple"><code>ChainMap.chain</code></a></li>
 <li><a href=".#ChainMap.chain-Tuple{Expr}"><code>ChainMap.chain</code></a></li>
 <li><a href=".#ChainMap.collect_arguments-Tuple"><code>ChainMap.collect_arguments</code></a></li>
 <li><a href=".#ChainMap.collect_call-Tuple{Any,Vararg{Any,N}}"><code>ChainMap.collect_call</code></a></li>
@@ -232,7 +232,7 @@ end
 
 
 <p>Will store positional and keyword arguments for later use. Create with <a href=".#ChainMap.collect_arguments-Tuple"><code>collect_arguments</code></a>. You can also <a href=".#Base.merge-Tuple{ChainMap.Arguments,ChainMap.Arguments}"><code>merge</code></a> two <code>Arguments</code>, <a href=".#ChainMap.push-Tuple{ChainMap.Arguments,Vararg{Any,N}}"><code>push</code></a> or <a href=".#ChainMap.unshift-Tuple{ChainMap.Arguments,Vararg{Any,N}}"><code>unshift</code></a> in new arguments, and run with <a href=".#Base.run-Tuple{ChainMap.Arguments,Function}"><code>run</code></a>.</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L2-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L2-L12' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.Arguments-Tuple{Tuple,Array{T,1}}' href='#ChainMap.Arguments-Tuple{Tuple,Array{T,1}}'>#</a>
 <strong><code>ChainMap.Arguments</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>Arguments(positional::Tuple, keyword::Vector)
@@ -240,7 +240,7 @@ end
 
 
 <p>Convert <code>keyword</code> to a <code>Dict</code> before creating an <a href=".#ChainMap.Arguments"><code>Arguments</code></a> type.</p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L18-L23' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L18-L23' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.LazyCall' href='#ChainMap.LazyCall'>#</a>
 <strong><code>ChainMap.LazyCall</code></strong> &mdash; <em>Type</em>.</p>
 <div class="codehilite"><pre><span></span>type LazyCall{T &lt;: Function}
@@ -251,7 +251,7 @@ end
 
 
 <p>Will store a function along with its arguments for later use. Create with <a href=".#ChainMap.collect_call-Tuple{Any,Vararg{Any,N}}"><code>collect_call</code></a> and run with <a href=".#Base.run-Tuple{ChainMap.Arguments,Function}"><code>run</code></a></p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L100-L108' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L100-L108' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.Arguments,Function}' href='#Base.run-Tuple{ChainMap.Arguments,Function}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(a::Arguments, f::Function)
@@ -270,7 +270,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L193-L208' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L193-L208' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.Arguments}' href='#Base.run-Tuple{ChainMap.Arguments}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(a::Arguments)
@@ -290,7 +290,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L155-L171' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L155-L171' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.LazyCall,Function}' href='#Base.run-Tuple{ChainMap.LazyCall,Function}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(l::LazyCall, f::Function)
@@ -309,7 +309,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L211-L228' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L211-L228' class='documenter-source'>source</a><br></p>
 <p><a id='Base.run-Tuple{ChainMap.LazyCall}' href='#Base.run-Tuple{ChainMap.LazyCall}'>#</a>
 <strong><code>Base.run</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span> run(l::LazyCall)
@@ -329,7 +329,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L174-L190' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L174-L190' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.arguments_block-Tuple' href='#ChainMap.arguments_block-Tuple'>#</a>
 <strong><code>ChainMap.arguments_block</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@arguments_block(es...)
@@ -350,7 +350,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L77-L95' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L77-L95' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.bitnot' href='#ChainMap.bitnot'>#</a>
 <strong><code>ChainMap.bitnot</code></strong> &mdash; <em>Function</em>.</p>
 <div class="codehilite"><pre><span></span>bitnot
@@ -363,7 +363,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/unweave.jl#L94-L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/unweave.jl#L94-L103' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple' href='#ChainMap.chain-Tuple'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain es...
@@ -377,7 +377,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/chain.jl#L87-L97' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/chain.jl#L87-L97' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple{Any,Any}' href='#ChainMap.chain-Tuple{Any,Any}'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain on_that call_this
@@ -390,7 +390,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/chain.jl#L48-L57' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/chain.jl#L48-L57' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple{Any,Expr}' href='#ChainMap.chain-Tuple{Any,Expr}'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain insert_this into_that::Expr
@@ -419,7 +419,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/chain.jl#L17-L45' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/chain.jl#L17-L45' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.chain-Tuple{Expr}' href='#ChainMap.chain-Tuple{Expr}'>#</a>
 <strong><code>ChainMap.chain</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@chain e::Expr
@@ -441,7 +441,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/chain.jl#L60-L79' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/chain.jl#L60-L79' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.collect_arguments-Tuple' href='#ChainMap.collect_arguments-Tuple'>#</a>
 <strong><code>ChainMap.collect_arguments</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>collect_arguments(positional...; keyword...)
@@ -456,7 +456,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L115-L126' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L115-L126' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.collect_call-Tuple{Any,Vararg{Any,N}}' href='#ChainMap.collect_call-Tuple{Any,Vararg{Any,N}}'>#</a>
 <strong><code>ChainMap.collect_call</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span><span class="nt">collect_call</span><span class="o">(</span><span class="nt">f</span><span class="o">:</span><span class="nd">:Function</span><span class="o">,</span> <span class="nt">positional</span><span class="o">...;</span> <span class="nt">keyword</span><span class="o">...)</span>
@@ -471,7 +471,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L131-L142' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L131-L142' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.lazy_call-Tuple{Any}' href='#ChainMap.lazy_call-Tuple{Any}'>#</a>
 <strong><code>ChainMap.lazy_call</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@lazy_call(e)
@@ -486,7 +486,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L233-L245' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L233-L245' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.nonstandard-Tuple' href='#ChainMap.nonstandard-Tuple'>#</a>
 <strong><code>ChainMap.nonstandard</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@nonstandard(fs...)
@@ -509,7 +509,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L14-L38' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L14-L38' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.push-Tuple{ChainMap.Arguments,Vararg{Any,N}}' href='#ChainMap.push-Tuple{ChainMap.Arguments,Vararg{Any,N}}'>#</a>
 <strong><code>ChainMap.push</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span><span class="nt">push</span><span class="o">(</span><span class="nt">arguments</span><span class="o">:</span><span class="nd">:Arguments</span><span class="o">,</span> <span class="nt">positional</span><span class="o">...;</span> <span class="nt">keyword</span><span class="o">...)</span>
@@ -528,7 +528,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L52-L71' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L52-L71' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.push_block-Tuple' href='#ChainMap.push_block-Tuple'>#</a>
 <strong><code>ChainMap.push_block</code></strong> &mdash; <em>Method</em>.</p>
 <p>@push_block(es...)</p>
@@ -547,7 +547,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L54-L73' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L54-L73' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.unshift-Tuple{ChainMap.Arguments,Vararg{Any,N}}' href='#ChainMap.unshift-Tuple{ChainMap.Arguments,Vararg{Any,N}}'>#</a>
 <strong><code>ChainMap.unshift</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>unshift(arguments::Arguments, positional...)
@@ -566,7 +566,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L77-L94' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L77-L94' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.unweave-Tuple{Expr}' href='#ChainMap.unweave-Tuple{Expr}'>#</a>
 <strong><code>ChainMap.unweave</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>@unweave e
@@ -596,31 +596,31 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/unweave.jl#L37-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/unweave.jl#L37-L69' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@arguments_block' href='#ChainMap.@arguments_block'>#</a>
 <strong><code>ChainMap.@arguments_block</code></strong> &mdash; <em>Macro</em>.</p>
 <p>See documentation of <a href=".#ChainMap.arguments_block-Tuple"><code>arguments_block</code></a></p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@chain' href='#ChainMap.@chain'>#</a>
 <strong><code>ChainMap.@chain</code></strong> &mdash; <em>Macro</em>.</p>
 <p>See documentation of <a href=".#ChainMap.chain-Tuple"><code>chain</code></a></p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@lazy_call' href='#ChainMap.@lazy_call'>#</a>
 <strong><code>ChainMap.@lazy_call</code></strong> &mdash; <em>Macro</em>.</p>
 <p>See documentation of <a href=".#ChainMap.lazy_call-Tuple{Any}"><code>lazy_call</code></a></p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@nonstandard' href='#ChainMap.@nonstandard'>#</a>
 <strong><code>ChainMap.@nonstandard</code></strong> &mdash; <em>Macro</em>.</p>
 <p>See documentation of <a href=".#ChainMap.nonstandard-Tuple"><code>nonstandard</code></a></p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L100' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L100' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@push_block' href='#ChainMap.@push_block'>#</a>
 <strong><code>ChainMap.@push_block</code></strong> &mdash; <em>Macro</em>.</p>
 <p>See documentation of <a href=".#ChainMap.push_block-Tuple"><code>push_block</code></a></p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
 <p><a id='ChainMap.@unweave' href='#ChainMap.@unweave'>#</a>
 <strong><code>ChainMap.@unweave</code></strong> &mdash; <em>Macro</em>.</p>
 <p>See documentation of <a href=".#ChainMap.unweave-Tuple{Expr}"><code>unweave</code></a></p>
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/nonstandard.jl#L103' class='documenter-source'>source</a><br></p>
 <p><a id='Base.merge-Tuple{ChainMap.Arguments,ChainMap.Arguments}' href='#Base.merge-Tuple{ChainMap.Arguments,ChainMap.Arguments}'>#</a>
 <strong><code>Base.merge</code></strong> &mdash; <em>Method</em>.</p>
 <div class="codehilite"><pre><span></span>merge(a::Arguments, b::Arguments)
@@ -639,7 +639,7 @@ end
 </pre></div>
 
 
-<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/653fd2f95a7a363e1aa646efa6c2ac63e51f5907/src/LazyCall.jl#L27-L45' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/bramtayl/ChainMap.jl/tree/4465c42036ec81c723dad044666564adc922bed1/src/LazyCall.jl#L27-L45' class='documenter-source'>source</a><br></p>
           <aside class="copyright" role="note">
             
             Documentation built with
